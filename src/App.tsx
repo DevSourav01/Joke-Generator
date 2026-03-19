@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [joke, setJoke] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true); // start as true
+  const [loading, setLoading] = useState<boolean>(true); 
 
   async function fetchJoke() {
-    setLoading(true); // set loading = true when you CLICK or FIRST load
+    setLoading(true); 
     try {
       const res = await fetch("https://api.chucknorris.io/jokes/random");
       const data = await res.json();
@@ -15,7 +15,7 @@ function App() {
     } catch (error) {
       console.log("Fetching an error while getting jokes....", error);
     } finally {
-      setLoading(false); // always set loading = false after fetch
+      setLoading(false); 
     }
   }
 
@@ -36,7 +36,7 @@ function App() {
           )}
         </div>
         <button
-          className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition"
+          className="bg-blue-700 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition cursor-pointer"
           onClick={fetchJoke}
         >
           New Joke
